@@ -5,9 +5,9 @@
 :root {
     --noir: #000;
     --blanc: #fff;
-    --blanc-creme: #E6CBA8;
     --brun: #8B5E3B;
-    --vert: #A7C957;
+    --vert-clair: #A7C957;
+    --vert-fonce: #20352e;
     --gris: #5C6B73;
     --ocre: #D4A373;
     --beige: #E6CBA8;
@@ -18,7 +18,8 @@
 **************************/
 body {
     font-family: "Kumbh Sans";
-    color: var(--noir);
+    color: var(--blanc);
+    background-color: var(--vert-fonce);
     padding: 0;
     margin: 0;
 }
@@ -31,6 +32,14 @@ h2 {
     font-size: 24pt;
 }
 
+h3 {
+    font-size: 18pt;
+}
+
+h4 {
+    font-size: 14pt;
+}
+
 a {
     text-decoration: none;
     color: var(--brun);
@@ -38,7 +47,7 @@ a {
 }
 
 p {
-    font-size: 16pt;
+    font-size: 12pt;
     line-height: 1.2;
 }
 
@@ -53,48 +62,176 @@ img {
 header {
     height: 4em;
     width: 100%;
-    background-color: var(--gris);
+    background-color: var(--vert-fonce);
+    border-bottom: 10px solid var(--vert-clair);
     position: fixed;
     top: 0;
+    z-index: 99;
 
     display: flex;
     flex-direction: row;
 }
 
 header img {
+    position: absolute;
     margin: 0 1em 0 5em;
     height: 100px;
     width: auto;
 }
+
 header a {
     color: var(--blanc);
+    margin: 1em;
+}
+
+header a:hover {
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--blanc);
 }
 
 nav {
-    width: 20em;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
 }
 
-/************************* 
-        Main 
-**************************/
+/*************************** 
+        Page d'acceuil 
+****************************/
+
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--blanc);
+}
+
+h1 + h1 {
+    position: absolute;
+    font-size: 35pt;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 main {
-    margin: 4em 8em;
-    text-align: justify;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    margin-top: 8em;
 }
 
-.respect img {
-    float: right; /* Permet au texte de s'enrouler autour */
-    margin: 0 0 0.5em 1.5em;
-    width: 350px; 
-    height: auto; 
-    border-radius: 10px;
+main > img {
+    margin-top: -3.5em;
+    width: 100%;
+    height: auto;
+}
+
+section {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 0 3em;
+}
+
+.a_propos {
+    order: 2;
+}
+
+.respect {
+    order: 1;
+}
+
+.locale {
+    order: 3;
+}
+
+.a_propos, 
+.respect, 
+.locale {
+    width: 400px;
+    height: auto;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.a_propos h2, 
+.respect h2, 
+.locale h2 {
+    height: 2.5em;
+}
+
+.a_propos div, 
+.respect div, 
+.locale div {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+
+.a_propos img, 
+.respect img, 
+.locale img {
+    margin: 0.2em;
+    width: 370px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.fromages section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.fromages  article {
+    width: 20em;
+    margin: 0 2em;
+    height: auto;
+    position: relative;
+}
+
+.fromages article > div {
+    position: relative;
+    text-align: center;
+}
+
+.fromages  div > img {
+    width: 15em;
+    height: auto;
+}
+
+.fromages  div > img + img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 10em; 
+    height: auto;
+}
+
+.fromages  div + div p{
+    text-align: justify;
+}
+
+.fromages  div + h4 {
+    position: absolute;
+    left: 70%;
+    bottom: -3em;
+
+    text-align: center;
+    width: 66px;
+    height: 74px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
