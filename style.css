@@ -11,6 +11,8 @@
     --gris: #5C6B73;
     --ocre: #D4A373;
     --beige: #E6CBA8;
+
+    --bg-fromage : linear-gradient(320deg,rgba(230, 203, 168, 1) 44%, rgba(212, 163, 115, 1) 88%);
 }
 
 /************************* 
@@ -37,7 +39,7 @@ h3 {
 }
 
 h4 {
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 a {
@@ -114,7 +116,7 @@ h1 {
 h1 + h1 {
     position: absolute;
     font-size: 35pt;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -136,14 +138,16 @@ section {
     justify-content: space-between;
 
     padding: 0 3em;
+    max-width: 110em;
+    margin: auto;
 }
 
 .a_propos {
-    order: 2;
+    order: 1;
 }
 
 .respect {
-    order: 1;
+    order: 2;
 }
 
 .locale {
@@ -184,31 +188,46 @@ section {
     border-radius: 5px;
 }
 
+iframe {
+    height: 30em;
+    width: 50em;
+    border: none;
+    margin: 2em auto;
+
+    display: block;
+}
+
+/****************************** 
+        Page des fromages 
+*******************************/
+
 .fromages section {
+    display: block;
+}
+
+.fromages article {
+    width: 50em;
+    margin: 0 auto;
+    height: 20em;
+    position: relative;
+    background: var(--bg-fromage);
+    border-radius: 15px;
+    margin-bottom: 2em;
+
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
 }
 
-.fromages  article {
-    width: 20em;
-    margin: 0 2em;
-    height: auto;
-    position: relative;
+.fromages article > img {
+    width: 40%;
+    height: 15em;
+    margin: auto 4em auto 2em;
 }
 
-.fromages article > div {
-    position: relative;
-    text-align: center;
-}
-
-.fromages  div > img {
-    width: 15em;
-    height: auto;
-}
-
-.fromages  div > img + img {
+.fromages div > img + img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -217,21 +236,36 @@ section {
     height: auto;
 }
 
-.fromages  div + div p{
+.fromages div {
+    display: flex;
+    flex-direction: column;
+}
+
+.fromages div p{
     text-align: justify;
 }
 
-.fromages  div + h4 {
+.fromages h4 {
     position: absolute;
-    left: 70%;
-    bottom: -3em;
+    bottom: 5%;
+    right: 5%;
+}
 
-    text-align: center;
-    width: 66px;
-    height: 74px;
+.fromages button {
+    height: 3em;
+    padding: 1.5em;
+    border: none;
 
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-    flex-direction: column;
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+}
+
+.fromages button img {
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
 }
