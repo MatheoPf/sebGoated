@@ -1,18 +1,25 @@
 @import url('https://fonts.cdnfonts.com/css/kumbh-sans');
+
 /************************* 
         VARIABLE 
 **************************/
 :root {
     --noir: #000;
+	--gris: #222;
     --blanc: #fff;
-    --brun: #8B5E3B;
+    --marron: #6E462A;
+    --marron-bi: #2e1a00;
+    --marron-fonce: #1c0f00;
     --vert-clair: #A7C957;
+    --vert-moyen: #76923C;
     --vert-fonce: #20352e;
-    --gris: #5C6B73;
+    --bleu: #2B95B5;
     --ocre: #D4A373;
     --beige: #E6CBA8;
 
-    --bg-fromage : linear-gradient(320deg,rgba(230, 203, 168, 1) 44%, rgba(212, 163, 115, 1) 88%);
+    --bg-fromage-vert: linear-gradient(37deg, rgba(64, 35, 1, 1) 75%, rgba(118, 146, 60, 1) 93%);
+    --bg-fromage-ocre: linear-gradient(37deg, rgba(64, 35, 1, 1) 75%, rgba(212, 163, 115, 1) 93%);
+    --bg-fromage-bleu: linear-gradient(37deg, rgba(64, 35, 1, 1) 75%, rgba(43, 149, 181, 1) 93%);
 }
 
 /************************* 
@@ -21,9 +28,21 @@
 body {
     font-family: "Kumbh Sans";
     color: var(--blanc);
-    background-color: var(--vert-fonce);
     padding: 0;
     margin: 0;
+}
+
+button {
+    font-size: 12pt;
+    font-family: "Kumbh Sans";
+    font-weight: bold;
+
+    background-color: var(--ocre);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    cursor: pointer;
 }
 
 h1 {
@@ -44,7 +63,7 @@ h4 {
 
 a {
     text-decoration: none;
-    color: var(--brun);
+    color: var(--marron);
     font-weight: bold;
 }
 
@@ -86,6 +105,23 @@ header a {
     margin: 1em;
 }
 
+header button {
+	position: absolute;
+	right: 3em;
+	top: 0.5em;
+	height: 23px;
+	width: auto;
+	padding: 5px;
+}
+
+header button img {
+	height: 32px;
+	width: auto;
+	z-index: 999;
+	margin: 0;
+	padding: 0;
+}
+
 header a:hover {
     padding-bottom: 2px;
     border-bottom: 2px solid var(--blanc);
@@ -113,7 +149,7 @@ h1 {
     color: var(--blanc);
 }
 
-h1 + h1 {
+h1+h1 {
     position: absolute;
     font-size: 35pt;
     top: 40%;
@@ -122,10 +158,11 @@ h1 + h1 {
 }
 
 main {
-    margin-top: 8em;
+    padding-top: 8em;
+    background-color: var(--vert-fonce);
 }
 
-main > img {
+main>img {
     margin-top: -3.5em;
     width: 100%;
     height: auto;
@@ -154,8 +191,8 @@ section {
     order: 3;
 }
 
-.a_propos, 
-.respect, 
+.a_propos,
+.respect,
 .locale {
     width: 400px;
     height: auto;
@@ -165,22 +202,22 @@ section {
     text-align: center;
 }
 
-.a_propos h2, 
-.respect h2, 
+.a_propos h2,
+.respect h2,
 .locale h2 {
     height: 2.5em;
 }
 
-.a_propos div, 
-.respect div, 
+.a_propos div,
+.respect div,
 .locale div {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    align-items: center;
 }
 
-.a_propos img, 
-.respect img, 
+.a_propos img,
+.respect img,
 .locale img {
     margin: 0.2em;
     width: 370px;
@@ -198,74 +235,128 @@ iframe {
 }
 
 /****************************** 
-        Page des fromages 
+        Page de vente 
 *******************************/
 
-.fromages section {
-    display: block;
+.ventes {
+    background-color: var(--marron-fonce);
 }
 
-.fromages article {
-    width: 50em;
+.ventes section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 1em;
+    justify-content: space-around;
+}
+
+.ventes article {
+    width: 25em;
     margin: 0 auto;
-    height: 20em;
+    padding: 1.5em;
+    height: 35em;
     position: relative;
-    background: var(--bg-fromage);
     border-radius: 15px;
     margin-bottom: 2em;
 
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.buche {
+    background: var(--bg-fromage-vert);
+}
+
+.tome {
+    background: var(--bg-fromage-ocre);
+}
+
+.fondant {
+    background: var(--bg-fromage-bleu);
+}
+
+.ventes article>img {
+    width: 100%;
+    height: auto;
+    margin: 0.5em 0 1em;
+    border-radius: 20px;
+
+    display: flex;
+    align-self: center;
+}
+
+.ventes article h3 {
+    text-align: left;
+}
+
+.ventes p {
+    flex-basis: 20%;
+}
+
+.ventes article p+div {
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-around;
     align-items: center;
 }
 
-.fromages article > img {
-    width: 40%;
-    height: 15em;
-    margin: auto 4em auto 2em;
-}
-
-.fromages div > img + img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 10em; 
-    height: auto;
-}
-
-.fromages div {
-    display: flex;
-    flex-direction: column;
-}
-
-.fromages div p{
-    text-align: justify;
-}
-
-.fromages h4 {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-}
-
-.fromages button {
-    height: 3em;
+.ventes button {
+    height: 3.5em;
     padding: 1.5em;
     border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14pt;
+    background-color: var(--ocre);
+    color: var(--blanc);
 
     display: flex;
-    justify-items: center;
     align-items: center;
-    position: absolute;
-    bottom: 10%;
-    right: 20%;
+    justify-content: center;
 }
 
-.fromages button img {
+.ventes button img {
     width: 25px;
     height: auto;
     margin-right: 10px;
+}
+#panierToast {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: var(--gris);
+    color: var(--blanc);
+    padding: 20px;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+#panierToast h3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#panierToast h3 > button {
+	background-color: var(--gris);
+	border: none;
+	display: inline;
+	padding: 0;
+	margin-left: 0.5em;
+	height: 55px;
+}
+
+#panierToast h3 > button img{
+	width: 50px;
+	height: auto;
+	margin: 0;
+}
+
+#panierToast.visible {
+    right: 0;
 }
