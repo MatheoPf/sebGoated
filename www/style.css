@@ -32,6 +32,7 @@ body {
     margin: 0;
 }
 
+
 button {
     font-size: 12pt;
     font-family: "Kumbh Sans";
@@ -160,6 +161,7 @@ h1+h1 {
 main {
     padding-top: 8em;
     background-color: var(--vert-fonce);
+    margin-bottom: 0;
 }
 
 main>img {
@@ -310,7 +312,7 @@ iframe {
     font-weight: bold;
     font-size: 14pt;
     background-color: var(--ocre);
-    color: var(--blanc);
+    color: var(--noir);
 
     display: flex;
     align-items: center;
@@ -329,7 +331,7 @@ iframe {
     width: 300px;
     height: 100%;
     background: var(--gris);
-    color: var(--blanc);
+    color: var(--noir);
     padding: 20px;
     transition: right 0.4s ease;
     overflow-y: auto;

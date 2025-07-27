@@ -16,7 +16,7 @@
             <a href="#">Mes Produits</a>
             <a href="/contact">Contact</a>
         </nav>
-        <button onclick="togglePanier()">0<img src="/.images/panier.png" alt=""></button>
+        <button onclick="togglePanier()">0<img src="/.images/panier_header.png" alt=""></button>
     </header>
     <main class="ventes">
         <!-- Liste des produits -->
@@ -51,12 +51,11 @@
         </section>
         <!-- Panneau latéral du panier -->
         <div id="panierToast">
-            <h3>Votre commande<button onclick="togglePanier()"><img src="/.images/fleche-droite.png" alt=""></button></h3>
+            <h3 style="color: var(--ocre);">Votre commande<button onclick="togglePanier()"><img src="/.images/fleche-droite.png" alt=""></button></h3>
             <ul id="listePanier"></ul>
             <button onclick="validerPanier()">Valider la commande</button>
         </div>
     </main>
     <script src="../script.js"></script>
 </body>
-
 </html>
