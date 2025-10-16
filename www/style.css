@@ -28,6 +28,7 @@
 body {
     font-family: "Kumbh Sans";
     color: var(--blanc);
+    background-color: var(--vert-fonce);
     padding: 0;
     margin: 0;
 }
@@ -88,15 +89,16 @@ header {
     border-bottom: 10px solid var(--vert-clair);
     position: fixed;
     top: 0;
-    z-index: 99;
+    z-index: 9;
 
     display: flex;
+    align-items: center;
     flex-direction: row;
 }
 
 header img {
     position: absolute;
-    margin: 0 1em 0 5em;
+    margin: 3em 1em 0 5em;
     height: 100px;
     width: auto;
 }
@@ -118,9 +120,13 @@ header button {
 header button img {
 	height: 32px;
 	width: auto;
-	z-index: 999;
+	z-index: 9;
 	margin: 0;
 	padding: 0;
+}
+
+header button img:hover {
+    height: 37px;
 }
 
 header a:hover {
@@ -327,27 +333,25 @@ iframe {
 #panierToast {
     position: fixed;
     top: 0;
-    right: -350px;
-    width: 300px;
+    right: -400px;
+    width: 320px;
     height: 100%;
     background: var(--gris);
     color: var(--noir);
     padding: 20px;
     transition: right 0.4s ease;
     overflow-y: auto;
-    z-index: 9999;
+    z-index: 9;
 }
 
 #panierToast h3 {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 #panierToast h3 > button {
 	background-color: var(--gris);
 	border: none;
-	display: inline;
 	padding: 0;
 	margin-left: 0.5em;
 	height: 55px;
@@ -359,6 +363,33 @@ iframe {
 	margin: 0;
 }
 
+#panierToast h3 > button img:hover {
+	width: 55px;
+}
+
 #panierToast.visible {
     right: 0;
+}
+
+#listePanier {
+    color: var(--blanc);
+    z-index: 10;
+}
+
+#listePanier li {
+    height: 3em;
+    display: flex;
+    align-items: center;
+}
+
+#listePanier li button {
+    background-color: var(--gris);
+    padding: 0.5em;
+    height: auto;
+    display: inline-flex;
+}
+
+#listePanier li img:hover {
+    height: auto;
+    width: 30px;
 }

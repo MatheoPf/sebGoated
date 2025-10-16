@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Chevrerie de chauvignac</title>
+    <title>Chevrerie de Chauvignac</title>
 </head>
 
 <body>
@@ -13,49 +13,56 @@
         <img src="/.images/logo chevre.png" alt="logo de la chèvrerie">
         <nav>
             <a href="/index.html">Accueil</a>
-            <a href="#">Mes Produits</a>
+            <a href="">Mes Produits</a>
             <a href="/contact">Contact</a>
         </nav>
-        <button onclick="togglePanier()">0<img src="/.images/panier_header.png" alt=""></button>
+        <button id="btnPanier" onclick="togglePanier()">0<img src="/.images/panier_header.png" alt=""></button>
     </header>
+
     <main class="ventes">
         <!-- Liste des produits -->
         <section>
             <article class="buche">
                 <img src="/.images/fromageBuche.jpg" alt="">
-                <h3>Nom fromage</h3>
-                <p>Une Tome au lait de chèvre</p>
+                <h3>Buche de chèvre</h3>
+                <p>Une Buche au lait de chèvre</p>
                 <div>
-                    <button onclick="ajouterAuPanier(1)"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
+                    <button data-add-to-cart data-id="3" data-nom="Buche de chèvre" data-prix="12.50"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
                     <h4>12.50€</h4>
                 </div>
             </article>
             <article class="tome">
                 <img src="/.images/fromageTome.jpg" alt="">
-                <h3>Nom fromage</h3>
+                <h3>Tome de chèvre</h3>
                 <p>Une Tome au lait de chèvre</p>
                 <div>
-                    <button onclick="ajouterAuPanier(2)"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
-                    <h4>12.50€</h4>
+                    <button data-add-to-cart data-id="2" data-nom="Tome de chèvre" data-prix="15.35"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
+                    <h4>15.35€</h4>
                 </div>
             </article>
             <article class="fondant">
                 <img src="/.images/fromageArome.jpg" alt="">
-                <h3>Nom fromage</h3>
+                <h3>Fromage Fondant</h3>
                 <p>Une Tome au lait de chèvre</p>
                 <div>
-                    <button onclick="ajouterAuPanier(3)"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
-                    <h4>12.50€</h4>
+                    <button data-add-to-cart data-id="3" data-nom="Fromage fondant" data-prix="8.85"><img src="/.images/panier.png" alt="">Ajouter au panier</button>
+                    <h4>8.85€</h4>
                 </div>
             </article>
         </section>
+
         <!-- Panneau latéral du panier -->
         <div id="panierToast">
-            <h3 style="color: var(--ocre);">Votre commande<button onclick="togglePanier()"><img src="/.images/fleche-droite.png" alt=""></button></h3>
+            <h3 style="color: var(--ocre);">
+                Votre commande
+                <button onclick="togglePanier()"><img src="/.images/fleche-droite.png" alt=""></button>
+            </h3>
             <ul id="listePanier"></ul>
-            <button onclick="validerPanier()">Valider la commande</button>
+            <button onclick="validerCommande()">Valider la commande</button>
+            <div id="status"></div>
         </div>
     </main>
+
     <script src="../script.js"></script>
 </body>
 </html>
